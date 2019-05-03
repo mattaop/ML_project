@@ -188,6 +188,7 @@ class CNN:
 
 
 def fit_cnn(x, y, model_weights='weights/model_weights.hdf5', network_type='simple', trials=1):
+    """Processes the images and labels, and run 'trials' number of trainings."""
     print('=== Convolution Neural Network ===')
     test_accuracy = np.zeros(trials)
     running_time = np.zeros(trials)
