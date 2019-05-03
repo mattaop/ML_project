@@ -9,6 +9,7 @@ from load_data import load_data_chars
 
 
 def svm(x, y):
+    """Fitting SVM model"""
     print('=== Non-linear SVM classification ===')
     random_state = 100
     # Data processing
@@ -17,7 +18,7 @@ def svm(x, y):
     # x = add_edge_detection_filter(x)
     x = add_otsu_filter(x)
     x = remove_dimension(x)
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.01,
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2,
                                                         random_state=random_state,
                                                         stratify=y)
 

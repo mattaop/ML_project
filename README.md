@@ -26,6 +26,8 @@ This folder structure required to run the project without any modifications:
 |---- feature_extraction
 |     |---- data_processing.py
 |     |---- filters.py
+|---- weights
+|     |---- character_detection_weights.hdf5
 |---- character_classification.py
 |---- character_detection.py
 |---- plots.py
@@ -36,10 +38,9 @@ This folder structure required to run the project without any modifications:
 ### Run code
 The code should be ran as modules, with the following calls in conda prompt:
 ```bash
-python -m character_classification
-python -m models.CNN
+python -m models.CNN -n simple
+python -m models.CNN -n residual
 python -m models.SVM
-python -m models.KNN
-python -m models.Naive_Bayes
+python -m character_detection
 python -m plots
 ```
