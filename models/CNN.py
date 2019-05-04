@@ -1,7 +1,15 @@
 import numpy as np
 import time
-import matplotlib.pyplot as plt
 import argparse
+import logging
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    import matplotlib
+    matplotlib.use('PS')
+    import matplotlib.pyplot as plt
+except Exception as e:
+    logging.exception(e)
 
 from keras import Model
 from keras.layers import Input, Conv2D, Flatten, Dense, Dropout, MaxPooling2D, add, BatchNormalization
