@@ -1,6 +1,16 @@
 from skimage.color import rgb2gray
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+import logging
+try:
+    import matplotlib.pyplot as plt
+    import matplotlib.patches as patches
+except ImportError:
+    import matplotlib
+    matplotlib.use('PS')
+    import matplotlib.pyplot as plt
+    import matplotlib.patches as patches
+except Exception as e:
+    logging.exception(e)
+
 from keras.models import load_model
 import random
 import numpy as np

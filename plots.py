@@ -1,4 +1,12 @@
-import matplotlib.pyplot as plt
+import logging
+try:
+    import matplotlib.pyplot as plt
+except ImportError:
+    import matplotlib
+    matplotlib.use('PS')
+    import matplotlib.pyplot as plt
+except Exception as e:
+    logging.exception(e)
 
 from feature_extraction.data_processing import grey_scale, scale_input
 from feature_extraction.filters import add_gaussian_filter, add_bilateral_filter,\
